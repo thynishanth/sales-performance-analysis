@@ -257,7 +257,7 @@ This is a skeleton project designed for handoff. The project team should:
 
 ## 📝 License
 
-[Add appropriate license]
+Apache 2.0
 
 ## 🆘 Support
 
