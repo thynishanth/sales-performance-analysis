@@ -13,12 +13,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy application code
 COPY src/ ./src/
-COPY data/ ./data/
-COPY static/ ./static/
 COPY templates/ ./templates/
 
-# Create necessary directories
-RUN mkdir -p data/raw data/processed logs
+# Create necessary directories (data/static may not exist on first run)
+RUN mkdir -p data/raw data/processed static logs
 
 # Expose port
 EXPOSE 8000
