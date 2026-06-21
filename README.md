@@ -22,7 +22,7 @@ This system provides:
 ```bash
 # Clone the repository
 git clone <repository-url>
-cd sales-performance-vibe-code
+cd sales-performance-analysis
 
 # Build and run with Docker Compose
 docker-compose up --build
@@ -37,7 +37,7 @@ docker-compose up --build
 ```bash
 # Clone the repository
 git clone <repository-url>
-cd sales-performance-vibe-code
+cd sales-performance-analysis
 
 # Create virtual environment
 python3 -m venv venv
@@ -160,7 +160,7 @@ Once running, visit `http://localhost:8000/docs` for interactive API documentati
 ## 📁 Project Structure
 
 ```
-sales-performance-vibe-code/
+sales-performance-analysis/
 ├── src/
 │   ├── main.py              # FastAPI application
 │   ├── models.py            # Database models
