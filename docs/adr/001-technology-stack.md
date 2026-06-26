@@ -11,7 +11,7 @@ We will use the following technology stack:
 1. **Backend Framework:** FastAPI
 2. **Database:** SQLite (with path to PostgreSQL)
 3. **ML Framework:** scikit-learn
-4. **LLM Integration:** OpenAI API
+4. **LLM Integration:** Gemini API
 5. **Frontend:** Simple HTML/JavaScript (no heavy framework)
 6. **Containerization:** Docker
 7. **CI/CD:** GitHub Actions
@@ -53,7 +53,7 @@ We will use the following technology stack:
   - Limited real-time learning capabilities
 - **Why chosen:** Requirements emphasize "a linear regression that works beats a neural network that doesn't" - scikit-learn provides robust, explainable models
 
-### OpenAI API
+### Gemini API
 - **Pros:**
   - State-of-the-art language understanding
   - Simple API integration
@@ -98,13 +98,13 @@ We will use the following technology stack:
 
 ### Negative
 - SQLite limits production scalability (documented mitigation: SQLAlchemy abstraction)
-- OpenAI dependency requires API key and has costs (documented fallback: graceful degradation)
+- Gemini dependency requires API key and has costs (documented fallback: graceful degradation)
 - Simple frontend may need rewrite for complex dashboards (acceptable for skeleton)
 
 ### Risks and Mitigations
 1. **Risk:** SQLite performance bottleneck
    - **Mitigation:** SQLAlchemy ORM enables seamless PostgreSQL migration
-2. **Risk:** OpenAI API costs
+2. **Risk:** Gemini API costs / free model limits
    - **Mitigation:** Caching, graceful degradation, clear documentation
 3. **Risk:** Model accuracy
    - **Mitigation:** Focus on working pipeline; model improvements can iterate
@@ -114,7 +114,7 @@ We will use the following technology stack:
 The architecture provides clear extension points:
 1. **Database:** Change connection string in config.py to migrate to PostgreSQL
 2. **ML Model:** Replace RevenuePredictor implementation while maintaining interface
-3. **LLM Provider:** Swap OpenAI client in insights.py for local model or other provider
+3. **LLM Provider:** Swap Gemini client in insights.py for local model or other provider
 4. **Frontend:** Replace templates/index.html with React/Vue app using same API
 5. **Additional Data Sources:** Add new models in models.py and extend DataIngestor
 
@@ -132,4 +132,4 @@ The architecture provides clear extension points:
 - FastAPI Documentation: https://fastapi.tiangolo.com/
 - SQLAlchemy: https://www.sqlalchemy.org/
 - scikit-learn: https://scikit-learn.org/
-- OpenAI API: https://platform.openai.com/docs/
+- Gemini API: https://ai.google.dev/api
